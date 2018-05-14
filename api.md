@@ -520,7 +520,10 @@ Login Success
 {% endapi-method-response-example-description %}
 
 ```javascript
-{ "tenantToken": "xyz.123.abc" } 
+{ 
+   "tenantToken": "xyz.123.abc",
+   "id": "1234"
+} 
 ```
 {% endapi-method-response-example %}
 
