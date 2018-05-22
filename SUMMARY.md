@@ -4,8 +4,6 @@
 * [Overview](overview.md)
 * [Getting started](getting-started.md)
 * Methods
-  * [Common](methods/common.md)
-  * [Krpano \(recommend\)](methods/krpano.md)
-  * [A-Frame](methods/aframe.md)
+  * [VR Viewer](methods/vrviewer.md)
 * [API](api.md)
 

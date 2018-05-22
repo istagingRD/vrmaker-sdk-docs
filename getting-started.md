@@ -13,37 +13,54 @@ If you want to use Krpano as your viewer, you can use the free version with wate
 ```markup
 // purchase a KRPano license and use the paid version of the JS file in your project
 <script type=text/javascript src="krpano.min.js"></script>
-// A-frame (free/open source)
-<script type=text/javascript src="aframe.min.js"></script>
 ```
 
 Then import vrmaker by es6 in your project. 
 
 ```text
-import VRMaker from 'vrmaker'
+import VRViewer from 'vrviewer'
 ```
 
 Or use [VR Maker SDK cdn ](https://www.istaging.com/sdk/vrmaker.js)include it in your project:
 
 ```javascript
-<script src="https://www.istaging.com/sdk/vrmaker.js"></script>
+<script src="https://www.istaging.com/sdk/vrviewer.js"></script>
 ```
 
 Finally, initialize the `VRMaker` object \(don't forget do create a `div` with an `id`\):
 
-```javascript
+```html
 <body>
-  <div id="vrmaker"></div>
+  <div id="vrviewer"></div>
 </body>
 
 <script>
-  // Init krpano(recommended) or aframe
-  var viewer = new VRMaker.AframeViewer()
-  // var viewer = new VRMaker.KrpanoViewer()
-  viewer.init({
-    el: document.getElementById('#vrmaker')
-    panoramas: // Fetched with VR Maker API you upload
-  })
+var vrviewer = new VRViewer()
+vrviewer.init({
+  el: '#vrviewer-sdk',
+  lang: 'zh-cn',
+  panoCollection: fakePanoCollection,
+  panoramas: fakePanoramas,
+  setting: {
+    autoRotateSetting: {
+      active: true,
+      revert: false,
+      rotateDuration: 200000,
+      restartTime: 20000
+    },
+    gyroSetting: {
+      active: false
+    },
+    krpanoSetting: {
+      mwheel: true,
+      focus: false
+    },
+    tripodSetting: {
+      image: 'https://www.istaging.com/sdk/logo-tripod.png',
+      size: 60
+    }
+  }
+})
 </script>
 ```
 
@@ -70,7 +87,7 @@ panoramas: [{
 
 ### Example
 
-Clone [https://github.com/istagingRD/vrmaker-sdk](https://github.com/istagingRD/vrmaker-sdk) and check it in examples / dev folder.
+Clone [https://github.com/istagingRD/vrmaker-sdk](https://github.com/istagingRD/vrmaker-sdk) and check it in examples / src folder.
 
 ```text
 npm install
